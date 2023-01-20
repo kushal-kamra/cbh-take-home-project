@@ -13,15 +13,7 @@ exports.deterministicPartitionKey = (event) => {
   }
 
   if (event.partitionKey) {
-    candidate = event.partitionKey;
-
-    if (typeof candidate !== "string") {
-      candidate = JSON.stringify(candidate);
-    }
-
-    if (candidate.length > MAX_PARTITION_KEY_LENGTH) {
-      candidate = getHash(candidate);
-    }
+    candidate = getDeterministicKeyFromPartitionKey(event.partitionKey);
   } else {
     const data = JSON.stringify(event);
     candidate = getHash(data);
@@ -32,4 +24,18 @@ exports.deterministicPartitionKey = (event) => {
 
 function getHash(key, hash = HASH_ALGO, digest = DIGEST_ENCODING) {
   return crypto.createHash(hash).update(candidate).digest(digest);
+}
+
+function getDeterministicKeyFromPartitionKey(partition_key) {
+  let candidate = partition_key;
+
+  if (typeof candidate !== "string") {
+    candidate = JSON.stringify(candidate);
+  }
+
+  if (candidate.length > MAX_PARTITION_KEY_LENGTH) {
+    candidate = getHash(candidate);
+  }
+
+  return candidate;
 }
