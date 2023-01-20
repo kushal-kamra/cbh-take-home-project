@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+1 - Added constants `HASH_ALGO` and `DIGEST_ENCODING`
+2 - modularised `getHash` from `deterministicPartitionKey` function
+3 - modularised `getDeterministicKeyFromPartitionKey` from `deterministicPartitionKey` function
+4 - returned from `deterministicPartitionKey` in case `!event` to remove a blanket if condition
