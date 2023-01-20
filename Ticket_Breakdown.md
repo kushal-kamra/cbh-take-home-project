@@ -28,7 +28,7 @@ Ticket 1:
 
 
 Ticket 2:
-    Title - Add custom_id in CRUD API's for Agents as an optional parameter
+    Title - Add `custom_id` in CRUD API's for Agents as an optional parameter
 
     Acceptance Criteria -
         1 - custom_id when passed in create(POST) and update(PUT) API's gets updated in database in table Agent
@@ -44,7 +44,7 @@ Ticket 2:
 
 
 Ticket 3:
-    Title - Add custom_id on the dashboard UI and make changes in CRUD API's for Agents
+    Title - Add `custom_id` on the dashboard UI and make changes in CRUD API's for Agents
 
     Acceptance Criteria - 
         1 - User is able to add/update value of custom_id for each agent
@@ -58,7 +58,7 @@ Ticket 3:
 
 
 Ticket 4:
-    Title - Add custom_id as value returned for each agent in agent metadata for function `getShiftsByFacility` and corresponding GET API
+    Title - Add `custom_id` as value returned for each agent in agent metadata for function `getShiftsByFacility` and corresponding GET API
 
     Acceptance Criteria - 
         1 - For every agent, accurate corresponding custom_id is provided in metadata
