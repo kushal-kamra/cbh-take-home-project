@@ -18,7 +18,7 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 ## Your Breakdown Here
 
 Ticket 1:
-    Title - Adding column custom_id to table Agents, default value null
+    Title - Adding column `custom_id` to table `Agents`, default value `null`
 
     Acceptance Criteria - Column with data type String exists in table Agent will null as default value
 
