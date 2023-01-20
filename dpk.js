@@ -2,10 +2,11 @@ const crypto = require("crypto");
 
 const HASH_ALGO = "sha3-512";
 const DIGEST_ENCODING = "hex";
+const MAX_PARTITION_KEY_LENGTH = 256;
 
 exports.deterministicPartitionKey = (event) => {
   const TRIVIAL_PARTITION_KEY = "0";
-  const MAX_PARTITION_KEY_LENGTH = 256;
+
   let candidate;
 
   if (!event) {
@@ -19,6 +20,8 @@ exports.deterministicPartitionKey = (event) => {
     candidate = getHash(data);
   }
   
+  console.log('candidate : ', candidate);
+
   return candidate;
 };
 
